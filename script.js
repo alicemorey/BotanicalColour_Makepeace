@@ -7,7 +7,7 @@ const modalRecipe = document.getElementById('modal-recipe');
 // Swatch data
 const data = {
   madder: {
-    img: 'madderdrawing.jpeg',
+    img: 'img/drawings/madderdrawing.jpeg',
     recipe: 'Boil madder root for 30 minutes. Add fabric and simmer for 1 hour.'
   },
   indigo: {
@@ -23,14 +23,29 @@ function openModal(swatch) {
 
   drawingModal.style.display = 'flex';
   recipeModal.style.display = 'flex';
+  drawingModal.classList.remove('show');
+  recipeModal.classList.remove('show');
+
+  // Animate in: first drawing, then recipe
+  setTimeout(() => {
+    drawingModal.classList.add('show');
+  }, 50); // slight delay for CSS to trigger
+
+  setTimeout(() => {
+    recipeModal.classList.add('show');
+  }, 400); // appear after drawing
 }
 
-// Close both modals
 function closeModal() {
-  drawingModal.style.display = 'none';
-  recipeModal.style.display = 'none';
-
-  modalImg.src = '';
-  modalRecipe.textContent = '';
-}
+    drawingModal.classList.remove('show');
+    recipeModal.classList.remove('show');
+  
+    // Hide after animation
+    setTimeout(() => {
+      drawingModal.style.display = 'none';
+      recipeModal.style.display = 'none';
+      modalImg.src = '';
+      modalRecipe.textContent = '';
+    }, 300); // match the transition time
+  }
 

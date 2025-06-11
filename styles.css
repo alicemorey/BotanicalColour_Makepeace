@@ -1,6 +1,6 @@
 :root {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    --bg: #f9f9f6;
+    --bg: #D6CFC5;
     --text: hsla(198.46,35.78%,21.37%,1);
     --accent: #c14534;
     --cream: #F5F3EE;
@@ -76,15 +76,15 @@
   .swatch-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    gap: 4rem;
-    max-width: calc(6 * (100px + 1rem)); /* Adjust based on your swatch size and gap */
+    gap: 6rem;
+    max-width: calc(6 * (150px + 1rem)); /* Adjust based on your swatch size and gap */
     margin: 0 auto;
   }
   
 
   .swatch {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-size: cover;
     background-position: center;
     border-radius: 50%; /* Makes it a perfect circle */
@@ -103,10 +103,37 @@
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    background: rgba(237, 233, 233, 0.6);
+    border-radius: 3%;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  }
+
+  .modal.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  #drawing-modal {
+    top: 20%;
+    left: 60%;
+    width: 35%;
+    margin-bottom: 100px;
+  }
+  
+  #recipe-modal {
+    top: 10%;
+    right: 5%;
+    width: 40%;
+    margin-left: 85px;
+    margin-bottom: 50px;
   }
 
   .modal-content {
@@ -120,7 +147,7 @@
 
   .modal img {
     max-width: 100%;
-    height: auto;
+    height: 50%;
     display: block;
   }
 
