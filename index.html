@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Botanical Colour</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  </style>
+</head>
+<body>
+  <h1>Botanical Colour</h1>
+  <div class="swatch-grid">
+    <div class="swatch" style="background-image: url('Madder-Root_F418.webp');" onclick="openModal('madder')"></div>
+    <div class="swatch" style="background-image: url('indigo.webp');" onclick="openModal('indigo')"></div>
+    <!-- Add more swatches here -->
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modal-content">
+      <button class="close" onclick="closeModal()">&times;</button>
+      <img id="modal-img" src="" alt="Drawing" />
+      <p id="modal-recipe"></p>
+    </div>
+  </div>
+    <script src="script.js" defer></script> 
+</body>
+<footer class="footer-link">
+    <a href="archive.html">Visit the Workshop Archive →</a>
+    <a href="gallery.html">Gallery →</a>
+  </footer>
+  
+</html>
