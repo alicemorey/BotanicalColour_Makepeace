@@ -1,7 +1,10 @@
-const modal = document.getElementById('modal');
+// Get modal elements
+const drawingModal = document.getElementById('drawing-modal');
+const recipeModal = document.getElementById('recipe-modal');
 const modalImg = document.getElementById('modal-img');
 const modalRecipe = document.getElementById('modal-recipe');
 
+// Swatch data
 const data = {
   madder: {
     img: 'madderdrawing.jpeg',
@@ -13,14 +16,21 @@ const data = {
   }
 };
 
+// Open both modals
 function openModal(swatch) {
-  modal.style.display = 'flex';
   modalImg.src = data[swatch].img;
   modalRecipe.textContent = data[swatch].recipe;
+
+  drawingModal.style.display = 'flex';
+  recipeModal.style.display = 'flex';
 }
 
+// Close both modals
 function closeModal() {
-  modal.style.display = 'none';
+  drawingModal.style.display = 'none';
+  recipeModal.style.display = 'none';
+
   modalImg.src = '';
   modalRecipe.textContent = '';
 }
+

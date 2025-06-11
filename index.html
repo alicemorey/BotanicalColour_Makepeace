@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <title>Botanical Colour</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-  </style>
 </head>
+<header class="color-header">
+    <h1>Botanical Colour - A Redpath way</h1>
+    <img class="logo" src="img/makepeace/makepeace_type.png" alt="Makepeace Botanicals logo"> 
+</header>
 <body>
-  <h1>Botanical Colour</h1>
+   
   <p class="subtitle">
     A living archive of plant dyes — <a href="about.html">read more about the project</a>
   </p>
@@ -24,21 +27,32 @@
     <div class="swatch" style="background-image: url('img/swatches/indigo_web.webp');" onclick="openModal('indigo')"></div>
     <div class="swatch" style="background-image: url('img/swatches/indigo_web.webp');" onclick="openModal('indigo')"></div>
     <div class="swatch" style="background-image: url('img/swatches/indigo_web.webp');" onclick="openModal('indigo')"></div>
+    <div class="swatch" style="background-image: url('img/swatches/indigo_web.webp');" onclick="openModal('indigo')"></div>
+    <div class="swatch" style="background-image: url('img/swatches/indigo_web.webp');" onclick="openModal('indigo')"></div>
+    <div class="swatch" style="background-image: url('img/swatches/indigo_web.webp');" onclick="openModal('indigo')"></div>
+    <div class="swatch" style="background-image: url('img/swatches/indigo_web.webp');" onclick="openModal('indigo')"></div>
+    <div class="swatch" style="background-image: url('img/swatches/indigo_web.webp');" onclick="openModal('indigo')"></div>
+    <div class="swatch" style="background-image: url('img/swatches/indigo_web.webp');" onclick="openModal('indigo')"></div>
     <!-- Add more swatches here -->
   </div>
 
-  <div class="modal" id="modal">
-    <div class="modal-content" id="modal-content">
-      <button class="close" onclick="closeModal()">&times;</button>
-      <img id="modal-img" src="" alt="Drawing" />
-      <p id="modal-recipe"></p>
-    </div>
+ <!-- Drawing Modal -->
+<div id="drawing-modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modal-img" src="" alt="Drawing">
   </div>
+  
+  <!-- Recipe Modal -->
+  <div id="recipe-modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modal-recipe"></div>
+  </div>
+  
     <script src="script.js" defer></script> 
 </body>
 <footer class="footer-link">
     <a href="archive.html">Visit the Workshop Archive →</a>
     <a href="gallery.html">Gallery →</a>
   </footer>
-  <img class="logo" src="img/makepeace/makepeace_type.png">
+  
 </html>

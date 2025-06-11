@@ -1,21 +1,53 @@
 :root {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     --bg: #f9f9f6;
-    --text: #222;
+    --text: hsla(198.46,35.78%,21.37%,1);
     --accent: #c14534;
+    --cream: #F5F3EE;
+    --taupe: #D6CFC5;
+    --moss: #6D946F;
+    --sky:   #A3C6DE;
   }
 
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    padding: 2rem;
+    padding:0;
   }
 
   h1 {
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 16px‚;
   }
+
+  .color-header {
+    background-color: var(--moss); /* your color */
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    height: 180px;
+  }
+  
+  .color-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--text);
+    font-family: inherit;
+    flex-grow: 1; /* so h1 uses available space */
+  }
+  
+  .logo {
+    height: 150px;  /* adjust size */
+    width: auto;
+    object-fit: contain;
+    position: absolute;
+  }
+  
 
   main {
     flex: 1; /* pushes the footer down */
@@ -27,25 +59,28 @@
     font-size: 1.1rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    color: #333;
+    color: var(--text);
   }
   
   .subtitle a {
-    color: #444;
+    color: var(--text);
     text-decoration: underline dotted;
     font-weight: 500;
   }
   
   .subtitle a:hover {
-    color: #000;
+    color: var(--moss);
     text-decoration: underline solid;
   }
   
   .swatch-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    gap: 1rem;
+    gap: 4rem;
+    max-width: calc(6 * (100px + 1rem)); /* Adjust based on your swatch size and gap */
+    margin: 0 auto;
   }
+  
 
   .swatch {
     width: 100px;
@@ -145,7 +180,7 @@
   
   .footer-link a {
     font-size: 1.1rem;  /* Smaller than title */
-    color: #222;
+    color:var(--moss);
     text-decoration: none;
     font-weight: 500;
     border-bottom: 1px solid transparent;
@@ -153,7 +188,7 @@
   }
   
   .footer-link a:hover {
-    border-color: #aaa;
+    border-color: var(--moss);
   }
   
   .about {
@@ -162,12 +197,11 @@
     padding: 0 1rem;
     line-height: 1.7;
     font-size: 1.1rem;
-    font-family: Georgia, serif;
-    color: #333;
+    color: var(--text);
   }
   
   .about a {
-    color: #444;
+    color: var(--text);
     text-decoration: underline dotted;
   }
   
