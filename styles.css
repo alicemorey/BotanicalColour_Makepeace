@@ -104,15 +104,15 @@
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: rgba(237, 233, 233, 0.6);
+    background: rgba(237, 233, 233, 0.85);
     border-radius: 3%;
     justify-content: center;
     align-items: center;
     padding: 1rem;
     opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
   }
 
   .modal.show {
