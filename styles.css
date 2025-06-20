@@ -1,23 +1,26 @@
 :root {
-    font-family: 'Libre Baskerville', serif;
-    --bg: #D6CFC5;
-    --text: hsla(198.46,35.78%,21.37%,1);
-    --accent: #c14534;
-    --cream: #F5F3EE;
-    --taupe: #D6CFC5;
+    font-family: 'Poppins', sans-serif;
+    --bg: #4b6573;
+    --text: #1f3946;
+    --accent: #bc7f5b;
+    --cream: #e0d8cd;
+    --cream-transparent: rgba(224, 216, 205, 0.7); /* 70% opacity */
+    --yellow: #cdbc59;
     --moss: #6D946F;
     --sky:   #A3C6DE;
+    --pink: #cfa1af;
+    --orange: #e2bb5e;
+    --pinky: #d5a284;
+    --pinky-transparent: rgba(213, 162, 132, 0.7); /* 70% opacity */
   }
 
   body {
     margin: 0;
-    background: #fdfaf6; /* soft off-white */
-    color: #1a1a1a;
+    background: var(--cream); /* soft off-white */
     line-height: 1.6;
   }
 
   h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
     font-weight: normal;
   }
 
@@ -27,15 +30,21 @@
     font-size: 16px‚;
   }
 
+  h5 {
+    color: var(--cream);
+    font-size: 18px;
+
+  }
+
   .color-header {
-    background-color: var(--moss); /* your color */
+    background-color: var(--pinky); /* your color */
     padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
     position: relative;
-    height: 100px;
+    height: 80px;
   }
   
   .color-header h1 {
@@ -60,9 +69,9 @@
   .subtitle {
     text-align: center;
     font-family: inherit; /* Uses the same font as rest of page */
-    font-size: 1.1rem;
+    font-size: 15px;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: rem;
     color: var(--text);
   }
   
@@ -83,6 +92,7 @@
     gap: 6rem;
     max-width: calc(6 * (150px + 1rem)); /* Adjust based on your swatch size and gap */
     margin: 0 auto;
+    padding-top: 50px;
   }
   
 
@@ -91,6 +101,7 @@
     height: 150px;
     background-size: cover;
     background-position: center;
+    border-radius: 50%;
     cursor: pointer;
     position: relative;
     transition: transform 0.2s;
@@ -107,7 +118,7 @@
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: rgba(237, 233, 233, 0.85);
+    background: var(--cream-transparent);
     border-radius: 3%;
     justify-content: center;
     align-items: center;
@@ -135,12 +146,43 @@
     top: 10%;
     right: 5%;
     width: 40%;
+    max-height: 80vh; /* Prevent modal from exceeding viewport height */
+    overflow-y: auto;  /* Add scroll when content overflows */
     margin-left: 85px;
     margin-bottom: 50px;
+    position: fixed; /* Make sure it stays in place */
+    z-index: 1001;    /* Adjust if needed */
   }
-
+  
+  /* Recipe Modal Specific Styles */
+  .recipe-content {
+    max-width: 900px;
+    background: var(--cream-transparent);
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  .recipe-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .recipe-img-col img {
+    max-width: 100%;
+    height: auto; /* Ensure it scales correctly */
+    display: block;
+  }
+  
+  .recipe-text-col {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    overflow-wrap: break-word; /* Prevent text from overflowing */
+  }
+  
   .modal-content {
-    background: white;
+    background: var(--cream-transparent);
     padding: 2rem;
     border-radius: 10px;
     max-width: 600px;
@@ -150,7 +192,7 @@
 
   .modal img {
     max-width: 100%;
-    height: 50%;
+    height: 80%;
     display: block;
   }
 
@@ -178,26 +220,6 @@
     padding: 2rem;
     max-width: 900px;
     margin: auto;
-  }
-  
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .video-card {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-  
-  .video-card iframe,
-  .video-card img {
-    width: 100%;
-    border-radius: 8px;
   }
   
 
@@ -241,4 +263,74 @@
     max-width: 300px;
   }
   
-  
+  .gallery-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+ /* ===== WORKSHOP SECTION ===== */
+.workshop-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  border-bottom: 2px solid var(--pinky);
+}
+
+.workshop-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .workshop-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* ===== LEFT TEXT BLOCK ===== */
+.workshop-description {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.workshop-description h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.workshop-description p {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0.25rem 0;
+}
+
+/* ===== RIGHT MEDIA GRID ===== */
+.media-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.media-grid img,
+.media-grid iframe {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Give some variety */
+.media-grid img:nth-child(odd) {
+  grid-row: span 1;
+}
+
+/* Video styling */
+.media-grid iframe {
+  aspect-ratio: 16 / 9;
+  min-height: 120px;
+}
+
