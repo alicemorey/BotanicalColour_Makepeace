@@ -1,5 +1,5 @@
 :root {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Libre Baskerville', serif;
     --bg: #D6CFC5;
     --text: hsla(198.46,35.78%,21.37%,1);
     --accent: #c14534;
@@ -11,9 +11,14 @@
 
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    padding:0;
+    background: #fdfaf6; /* soft off-white */
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
   }
 
   h1 {
@@ -30,14 +35,13 @@
     justify-content: space-between;
     box-sizing: border-box;
     position: relative;
-    height: 180px;
+    height: 100px;
   }
   
   .color-header h1 {
     margin: 0;
     font-size: 2rem;
     color: var(--text);
-    font-family: inherit;
     flex-grow: 1; /* so h1 uses available space */
   }
   
@@ -87,7 +91,6 @@
     height: 150px;
     background-size: cover;
     background-position: center;
-    border-radius: 50%; /* Makes it a perfect circle */
     cursor: pointer;
     position: relative;
     transition: transform 0.2s;
