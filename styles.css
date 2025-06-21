@@ -334,3 +334,154 @@
   min-height: 120px;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    text-align: center;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .color-header {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .color-header h1 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .logo {
+    position: static;
+    height: 100px;
+    width: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .swatch-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .swatch {
+    width: 100px;
+    height: 100px;
+  }
+
+  #drawing-modal,
+  #recipe-modal {
+    position: fixed;
+    width: 90%;
+    left: 5%;
+    top: 10%;
+    margin: 0;
+  }
+
+  .recipe-content {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .archive {
+    padding: 1rem;
+  }
+
+  .about {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+
+  .workshop-content {
+    flex-direction: column;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    font-size: 0.9rem;
+  }
+
+  .color-header {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    width: 80px;
+    height: auto;
+    margin: 0.5rem auto;
+    position: static;
+  }
+
+  .swatch-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .swatch {
+    width: 80px;
+    height: 80px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin: 0.5rem 1rem;
+  }
+
+  .modal {
+    padding: 0.5rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  #drawing-modal,
+  #recipe-modal {
+    width: 90%;
+    left: 5%;
+    top: 5%;
+    margin: 0;
+    max-height: 90vh;
+  }
+
+  .recipe-content {
+    padding: 1rem;
+  }
+
+  .recipe-grid {
+    gap: 1rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+    padding: 1rem 0;
+  }
+
+  .about {
+    font-size: 0.95rem;
+  }
+}
