@@ -1,244 +1,143 @@
-:root {
-    font-family: 'Libre Baskerville', serif;
-    --bg: #D6CFC5;
-    --text: hsla(198.46,35.78%,21.37%,1);
-    --accent: #c14534;
-    --cream: #F5F3EE;
-    --taupe: #D6CFC5;
-    --moss: #6D946F;
-    --sky:   #A3C6DE;
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #faf7f2;
+  color: #2e2e2e;
+}
 
-  body {
-    margin: 0;
-    background: #fdfaf6; /* soft off-white */
-    color: #1a1a1a;
-    line-height: 1.6;
-  }
+header.color-header {
+  background-color: #f4efe9;
+  padding: 3rem 2rem 1rem;
+  text-align: center;
+}
 
-  h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: normal;
-  }
+header.color-header h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
 
-  h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 16px‚;
-  }
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+}
 
-  .color-header {
-    background-color: var(--moss); /* your color */
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    position: relative;
-    height: 100px;
-  }
-  
-  .color-header h1 {
-    margin: 0;
-    font-size: 2rem;
-    color: var(--text);
-    flex-grow: 1; /* so h1 uses available space */
-  }
-  
-  .logo {
-    height: 150px;  /* adjust size */
-    width: auto;
-    object-fit: contain;
-    position: absolute;
-  }
-  
+.subtitle a {
+  color: #a5623f;
+  text-decoration: none;
+  border-bottom: 1px solid #a5623f;
+}
 
-  main {
-    flex: 1; /* pushes the footer down */
-  }
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
 
+.swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.swatch:hover {
+  transform: scale(1.02);
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(237, 233, 233, 0.85);
+  border-radius: 3%;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.modal.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+#drawing-modal {
+  top: 20%;
+  left: 60%;
+  width: 35%;
+  margin-bottom: 100px;
+}
+
+#recipe-modal {
+  top: 10%;
+  right: 5%;
+  width: 40%;
+  margin-left: 85px;
+  margin-bottom: 50px;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.modal img {
+  max-width: 100%;
+  height: 50%;
+  display: block;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+footer.footer-link a {
+  display: inline-block;
+  margin: 0 1rem;
+  color: #a5623f;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+footer.footer-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  header.color-header h1 {
+    font-size: 1.8rem;
+  }
   .subtitle {
-    text-align: center;
-    font-family: inherit; /* Uses the same font as rest of page */
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    color: var(--text);
-  }
-  
-  .subtitle a {
-    color: var(--text);
-    text-decoration: underline dotted;
-    font-weight: 500;
-  }
-  
-  .subtitle a:hover {
-    color: var(--moss);
-    text-decoration: underline solid;
-  }
-  
-  .swatch-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    gap: 6rem;
-    max-width: calc(6 * (150px + 1rem)); /* Adjust based on your swatch size and gap */
-    margin: 0 auto;
-  }
-  
-
-  .swatch {
-    width: 150px;
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.2s;
-    margin: auto;
-  }
-  
-
-  .swatch:hover {
-    transform: scale(1.03);
-  }
-
-  .modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background: rgba(237, 233, 233, 0.85);
-    border-radius: 3%;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-  }
-
-  .modal.show {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
-  }
-
-  #drawing-modal {
-    top: 20%;
-    left: 60%;
-    width: 35%;
-    margin-bottom: 100px;
-  }
-  
-  #recipe-modal {
-    top: 10%;
-    right: 5%;
-    width: 40%;
-    margin-left: 85px;
-    margin-bottom: 50px;
-  }
-
-  .modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 600px;
-    width: 100%;
-    position: relative;
-  }
-
-  .modal img {
-    max-width: 100%;
-    height: 50%;
-    display: block;
-  }
-
-  .close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  .archive {
-    margin-top: 4rem;
-  }
-
-  iframe {
-    width: 100%;
-    height: 315px;
-    border: none;
-  }
-
-  .archive {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-  }
-  
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .video-card {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-  
-  .video-card iframe,
-  .video-card img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-
-  .footer-link {
-    text-align: center;
-    margin-top: 4rem;
-    padding: 2rem 0;
-    font-family: inherit; /* Matches your title font */
-  }
-  
-  .footer-link a {
-    font-size: 1.1rem;  /* Smaller than title */
-    color:var(--moss);
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
-  }
-  
-  .footer-link a:hover {
-    border-color: var(--moss);
-  }
-  
-  .about {
-    max-width: 700px;
-    margin: 3rem auto;
+    font-size: 1rem;
     padding: 0 1rem;
-    line-height: 1.7;
-    font-size: 1.1rem;
-    color: var(--text);
   }
-  
-  .about a {
-    color: var(--text);
-    text-decoration: underline dotted;
-  }
-
-  .image {
-    align-items: center;
-    margin: 0 0 1em 1em; /* top, right, bottom, left */
-    max-width: 300px;
-  }
-  
-  
+}
