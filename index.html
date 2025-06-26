@@ -8,13 +8,18 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <header class="color-header">
-    <h5>BOTANICAL COLOUR * A REDPATH WAY</h5>
-    <p class="subtitle">
-      A living archive of plant dyes — <a href="about.html">read more about the project</a>
-    </p>
+  <div class="language-switcher">
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('cy')">CY</button>
+  </div>
+  <p>
+    <h5 data-i18n="header.title">BOTANICAL COLOUR * A REDPATH WAY</h5>
+    <span data-i18n="header.subtitle">A living archive of plant dyes —</span>
+  <a href="about.html" data-i18n="header.link">read more about the project</a>
+  </p>
    <!--<img class="logo" src="img/makepeace/makepeace_type.png" alt="Makepeace Botanicals logo"> --> 
-</header>
-<body>
+  </header>
+  <body>
    
   <div class="swatch-grid">
     <div class="swatch" style="background-image: url('img/swatches/indigo.webp');" onclick="openModal('indigo')"></div>
@@ -57,8 +62,8 @@
     <script src="script.js" defer></script> 
 </body>
 <footer class="footer-link">
-    <a href="archive.html">Visit the Workshop Archive →</a>
-    <a href="gallery.html">Gallery →</a>
+    <a href="archive.html" data-i18n="footer.archive">Visit the Workshop Archive →</a>
+    <a href="gallery.html" data-i18n="footer.gallery">Gallery →</a>
   </footer>
   
 </html>

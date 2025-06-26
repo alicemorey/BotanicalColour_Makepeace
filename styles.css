@@ -335,6 +335,11 @@
 }
 
 @media (max-width: 768px) {
+
+  body {
+    position: relative; /* ensure fixed modals reference viewport */
+  }
+
   h1 {
     font-size: clamp(1.5rem, 5vw, 2.5rem);
     text-align: center;
@@ -374,24 +379,78 @@
     height: 100px;
   }
 
+  /* Make modals stack and fully fit on screen */
+  /* Keep modals as fixed overlays */
   #drawing-modal,
   #recipe-modal {
     position: fixed;
-    width: 90%;
+    top: auto;  /* we'll use bottom to stack */
     left: 5%;
-    top: 10%;
-    margin: 0;
+    width: 90%;
+    max-height: 40vh; /* restrict height so both fit */
+    overflow-y: auto;
+    z-index: 1001;
+    background: var(--cream-transparent);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 1rem;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    display: flex;
+    flex-direction: column;
   }
 
-  .recipe-content {
-    padding: 1rem;
-  }
+  /* Drawing modal on top */
+#drawing-modal {
+  position: fixed;
+  bottom: 45vh;      /* Push it up */
+  left: 5%;
+  right: 5%;
+  height: 35vh;
+  display: flex !important;
+  pointer-events: auto;
+  opacity: 1;
+  transform: none;
+  z-index: 1001;
+}
+
+/* Recipe modal directly underneath */
+#recipe-modal {
+  position: fixed;
+  bottom: 5vh;       /* Just above bottom */
+  left: 5%;          /* Same left as drawing modal */
+  right: 5%;         /* Same right as drawing modal */
+  height: 35vh;
+  display: flex !important;
+  pointer-events: auto;
+  opacity: 1;
+  transform: none;
+  z-index: 1001;
+  padding-right: 20px; /* For close button room */
+}
+
 
   .modal-content {
-    padding: 1rem;
     max-width: 100%;
+    padding: 1rem;
   }
 
+  .modal img {
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+
+  .close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text);
+  }
+  
   .archive {
     padding: 1rem;
   }
