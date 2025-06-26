@@ -1,143 +1,487 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #faf7f2;
-  color: #2e2e2e;
-}
-
-header.color-header {
-  background-color: #f4efe9;
-  padding: 3rem 2rem 1rem;
-  text-align: center;
-}
-
-header.color-header h1 {
-  font-weight: 600;
-  font-size: 2.5rem;
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  margin: 2rem auto;
-  max-width: 600px;
-}
-
-.subtitle a {
-  color: #a5623f;
-  text-decoration: none;
-  border-bottom: 1px solid #a5623f;
-}
-
-.swatch-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.swatch {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.2s;
-}
-
-.swatch:hover {
-  transform: scale(1.02);
-}
-
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: rgba(237, 233, 233, 0.85);
-  border-radius: 3%;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-
-.modal.show {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
-}
-
-#drawing-modal {
-  top: 20%;
-  left: 60%;
-  width: 35%;
-  margin-bottom: 100px;
-}
-
-#recipe-modal {
-  top: 10%;
-  right: 5%;
-  width: 40%;
-  margin-left: 85px;
-  margin-bottom: 50px;
-}
-
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 100%;
-  position: relative;
-}
-
-.modal img {
-  max-width: 100%;
-  height: 50%;
-  display: block;
-}
-
-.close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-footer.footer-link a {
-  display: inline-block;
-  margin: 0 1rem;
-  color: #a5623f;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-footer.footer-link a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  header.color-header h1 {
-    font-size: 1.8rem;
+:root {
+    font-family: 'Poppins', sans-serif;
+    --bg: #4b6573;
+    --text: #1f3946;
+    --accent: #bc7f5b;
+    --cream: #e0d8cd;
+    --cream-transparent: rgba(224, 216, 205, 0.7); /* 70% opacity */
+    --yellow: #cdbc59;
+    --moss: #6D946F;
+    --sky:   #A3C6DE;
+    --pink: #cfa1af;
+    --orange: #e2bb5e;
+    --pinky: #d5a284;
+    --pinky-transparent: rgba(213, 162, 132, 0.7); /* 70% opacity */
   }
+
+  body {
+    margin: 0;
+    background: var(--cream); /* soft off-white */
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    font-weight: normal;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 16px‚;
+  }
+
+  h5 {
+    color: var(--cream);
+    font-size: 18px;
+
+  }
+
+  .color-header {
+    background-color: var(--pinky); /* your color */
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    height: 80px;
+  }
+  
+  .color-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--text);
+    flex-grow: 1; /* so h1 uses available space */
+  }
+  
+  .logo {
+    height: 200px;  /* adjust size */
+    width: 250px;
+    object-fit: contain;
+    position: absolute;
+  }
+  
+
+  main {
+    flex: 1; /* pushes the footer down */
+  }
+
   .subtitle {
+    text-align: center;
+    font-family: inherit; /* Uses the same font as rest of page */
+    font-size: 15px;
+    margin-top: 1rem;
+    margin-bottom: rem;
+    color: var(--text);
+  }
+  
+  .subtitle a {
+    color: var(--text);
+    text-decoration: underline dotted;
+    font-weight: 500;
+  }
+  
+  .subtitle a:hover {
+    color: var(--moss);
+    text-decoration: underline solid;
+  }
+  
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 6rem;
+    max-width: calc(6 * (150px + 1rem)); /* Adjust based on your swatch size and gap */
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  
+
+  .swatch {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s;
+    margin: auto;
+  }
+  
+
+  .swatch:hover {
+    transform: scale(1.03);
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: var(--cream-transparent);
+    border-radius: 3%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .modal.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  #drawing-modal {
+    top: 20%;
+    left: 60%;
+    width: 35%;
+    margin-bottom: 100px;
+  }
+  
+  #recipe-modal {
+    top: 10%;
+    right: 5%;
+    width: 40%;
+    max-height: 80vh; /* Prevent modal from exceeding viewport height */
+    overflow-y: auto;  /* Add scroll when content overflows */
+    margin-left: 85px;
+    margin-bottom: 50px;
+    position: fixed; /* Make sure it stays in place */
+    z-index: 1001;    /* Adjust if needed */
+  }
+  
+  /* Recipe Modal Specific Styles */
+  .recipe-content {
+    max-width: 900px;
+    background: var(--cream-transparent);
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  .recipe-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .recipe-img-col img {
+    max-width: 100%;
+    height: auto; /* Ensure it scales correctly */
+    display: block;
+  }
+  
+  .recipe-text-col {
     font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    overflow-wrap: break-word; /* Prevent text from overflowing */
+  }
+  
+  .modal-content {
+    background: var(--cream-transparent);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+  }
+
+  .modal img {
+    max-width: 100%;
+    height: 80%;
+    display: block;
+  }
+
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .archive {
+    margin-top: 4rem;
+  }
+
+  iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+  }
+
+  .archive {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+
+  .footer-link {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem 0;
+    font-family: inherit; /* Matches your title font */
+  }
+  
+  .footer-link a {
+    font-size: 1.1rem;  /* Smaller than title */
+    color:var(--moss);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+  
+  .footer-link a:hover {
+    border-color: var(--moss);
+  }
+  
+  .about {
+    max-width: 700px;
+    margin: 3rem auto;
     padding: 0 1rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+  
+  .about a {
+    color: var(--text);
+    text-decoration: underline dotted;
+  }
+
+  .image {
+    align-items: center;
+    margin: 0 0 1em 1em; /* top, right, bottom, left */
+    max-width: 300px;
+  }
+  
+  .gallery-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+ /* ===== WORKSHOP SECTION ===== */
+.workshop-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  border-bottom: 2px solid var(--pinky);
+}
+
+.workshop-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .workshop-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* ===== LEFT TEXT BLOCK ===== */
+.workshop-description {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.workshop-description h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.workshop-description p {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0.25rem 0;
+}
+
+/* ===== RIGHT MEDIA GRID ===== */
+.media-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.media-grid img,
+.media-grid iframe {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Give some variety */
+.media-grid img:nth-child(odd) {
+  grid-row: span 1;
+}
+
+/* Video styling */
+.media-grid iframe {
+  aspect-ratio: 16 / 9;
+  min-height: 120px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    text-align: center;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .color-header {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .color-header h1 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .logo {
+    position: static;
+    height: 100px;
+    width: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .swatch-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .swatch {
+    width: 100px;
+    height: 100px;
+  }
+
+  #drawing-modal,
+  #recipe-modal {
+    position: fixed;
+    width: 90%;
+    left: 5%;
+    top: 10%;
+    margin: 0;
+  }
+
+  .recipe-content {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .archive {
+    padding: 1rem;
+  }
+
+  .about {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+
+  .workshop-content {
+    flex-direction: column;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    font-size: 0.9rem;
+  }
+
+  .color-header {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    width: 80px;
+    height: auto;
+    margin: 0.5rem auto;
+    position: static;
+  }
+
+  .swatch-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .swatch {
+    width: 80px;
+    height: 80px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin: 0.5rem 1rem;
+  }
+
+  .modal {
+    padding: 0.5rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  #drawing-modal,
+  #recipe-modal {
+    width: 90%;
+    left: 5%;
+    top: 5%;
+    margin: 0;
+    max-height: 90vh;
+  }
+
+  .recipe-content {
+    padding: 1rem;
+  }
+
+  .recipe-grid {
+    gap: 1rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+    padding: 1rem 0;
+  }
+
+  .about {
+    font-size: 0.95rem;
   }
 }
