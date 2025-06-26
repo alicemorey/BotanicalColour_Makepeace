@@ -336,10 +336,6 @@
 
 @media (max-width: 768px) {
 
-  body {
-    position: relative; /* ensure fixed modals reference viewport */
-  }
-
   h1 {
     font-size: clamp(1.5rem, 5vw, 2.5rem);
     text-align: center;
