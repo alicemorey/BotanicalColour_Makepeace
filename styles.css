@@ -386,6 +386,7 @@
     position: fixed;
     top: auto;  /* we'll use bottom to stack */
     left: 5%;
+    right: 5%;
     width: 90%;
     max-height: 40vh; /* restrict height so both fit */
     overflow-y: auto;
@@ -427,7 +428,7 @@
   opacity: 1;
   transform: none;
   z-index: 1001;
-  padding-right: 20px; /* For close button room */
+  padding-right: 100px; /* For close button room */
 }
 
 
