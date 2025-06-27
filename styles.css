@@ -469,14 +469,22 @@
   }
 
   h5 {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-top: 0; /* remove space if any */
   }
 
   .color-header {
     flex-direction: column;
-    height: 80px;
-    padding: 0.5rem;
-    text-align: center;
+    gap: 0.25rem;
+    height: 215px;
+    padding-top: 0.5rem;
+  } 
+
+  .language-switcher {
+    position: static;
+    justify-content: center;
+    margin: 0 auto 0.1rem; /* nearly no space below */
+    
   }
 
   .logo {
