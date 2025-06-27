@@ -423,6 +423,19 @@
     margin-top: 0.5rem;
   }
 
+  .language-switcher {
+    position: static;
+    justify-content: center;
+    margin: 0.5rem auto;
+  }
+
+  .color-header {
+    flex-direction: column;
+    gap: 0.25rem;
+    height: auto;
+    padding-top: 0.5rem;
+  } 
+
   .logo {
     position: static;
     height: 100px;
