@@ -142,6 +142,36 @@
     margin-bottom: 100px;
   }
   
+  #modal-recipe {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.2;
+    padding: 0.6rem;
+  }
+  
+  #modal-recipe ul,
+  #modal-recipe ol {
+    margin-top: 0.2rem;     /* reduce gap from paragraph above */
+    margin-bottom: 0.6rem;  /* reduce space below list */
+    padding-left: 1.2rem;
+  }
+  
+  #modal-recipe li {
+    margin-bottom: 0.2rem; /* tighter spacing */
+    line-height: 1.0;      /* slightly tighter than default */
+  }
+  
+  #modal-recipe p {
+    margin-bottom: 0.4rem; /* closer to list */
+  }
+  
+  #recipe-modal .modal-content {
+    max-width: 600px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+  
   #recipe-modal {
     top: 10%;
     right: 5%;
@@ -161,25 +191,7 @@
     padding: 2rem;
     box-sizing: border-box;
   }
-  
-  .recipe-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .recipe-img-col img {
-    max-width: 100%;
-    height: auto; /* Ensure it scales correctly */
-    display: block;
-  }
-  
-  .recipe-text-col {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text);
-    overflow-wrap: break-word; /* Prevent text from overflowing */
-  }
+
   
   .modal-content {
     background: var(--cream-transparent);

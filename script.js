@@ -43,7 +43,8 @@ function openModal(swatch) {
   }
 
   // Recipe (translated)
-  modalRecipe.textContent = recipeText;
+  modalRecipe.innerHTML = recipeText.replace(/\n/g, '<br>');
+
 
   // modals with animation
   drawingModal.style.display = 'flex';
@@ -89,27 +90,32 @@ function closeModal() {
       "about.invite": "Have something to share? Get in touch or join a workshop.",
       "about.back": "← Back to Swatches",
 
-    "dye.indigo.recipe": `Indigo is one of the oldest and most revered natural dyes, derived from the leaves of indigo-bearing plants such as Indigofera tinctoria. This recipe follows a traditional, environmentally friendly fermentation method.
+    "dye.indigo.recipe": `
+<p><strong>Indigo</strong> is one of the oldest and most revered natural dyes, derived from the leaves of indigo-bearing plants such as <em>Indigofera tinctoria</em>. This recipe follows a traditional, environmentally friendly fermentation method.</p>
 
-    Materials Needed:
-    - Dried indigo leaves or natural indigo pigment (50g)
-    - Fructose sugar or mashed bananas (25g)
-    - Calcium hydroxide / lime (25g)
-    - Warm water (~40°C)
-    - Non-metal container
-    - Long spoon or stick
-    - Natural fiber cloth (pre-washed)
+<p><strong>Materials Needed:</strong></p>
+<ul>
+  <li>50g dried indigo leaves or natural indigo pigment</li>
+  <li>25g fructose sugar or mashed bananas</li>
+  <li>25g calcium hydroxide / lime</li>
+  <li>Warm water (~40°C)</li>
+  <li>Non-metal container</li>
+  <li>Long spoon or stick</li>
+  <li>Natural fiber cloth (pre-washed)</li>
+</ul>
 
-    Step-by-Step Process:
-    1. Fill the container with warm water.
-    2. Stir in the indigo pigment.
-    3. Add fructose gently to begin the reduction.
-    4. Stir in lime slowly to raise the pH.
-    5. Cover and rest the vat in a warm place.
-    6. Once a coppery film forms, submerge fabric for 3–10 mins.
-    7. Remove fabric and let oxidize to blue.
+<p><strong>Step-by-Step Process:</strong></p>
+  <li>Fill the container with warm water.</li>
+  <li>Stir in the indigo pigment.</li>
+  <li>Add fructose gently to begin the reduction.</li>
+  <li>Stir in lime slowly to raise the pH.</li>
+  <li>Cover and rest the vat in a warm place.</li>
+  <li>Once a coppery film forms, submerge fabric for 3–10 minutes.</li>
+  <li>Remove fabric and let oxidize to blue.</li>
 
-    The vat can be maintained by keeping it warm and occasionally feeding it sugar and lime. Indigo dyeing is a slow, beautiful process that connects us with ancient tradition and the rhythm of natural color transformation.`,
+<p>The vat can be maintained by keeping it warm and occasionally feeding it sugar and lime. Indigo dyeing is a slow, beautiful process that connects us with ancient tradition and the rhythm of natural color transformation.</p>
+`,
+
 
     "dye.madder.recipe": `Soak leaves in water for 24h. Add lime and reduce for color release.`,
   
@@ -172,7 +178,7 @@ Gellir cynnal y vat drwy ei gadw'n gynnes a rhoi siwgr a chalch yn achlysurol. M
   if (currentSwatch && drawingModal.style.display === 'flex') {
     const swatchData = data[currentSwatch];
     const recipeText = translations[lang]?.[swatchData.recipeKey] || 'Recipe not available';
-    modalRecipe.textContent = recipeText;
+    modalRecipe.innerHTML = recipeText.replace(/\n/g, '<br>');
   }
 }
   
