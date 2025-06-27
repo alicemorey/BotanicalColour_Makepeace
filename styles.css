@@ -218,6 +218,31 @@
     cursor: pointer;
   }
 
+  .modal-swatch-link {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .modal-swatch-thumbnail {
+    width: 60px;
+    height: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .modal-swatch-thumbnail:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(50, 50, 50, 0.3);
+  }
+  
+  .modal-swatch-caption {
+    font-size: 0.9rem;
+    color: #444;
+    margin-top: 0.4rem;
+  }
+  
   .archive {
     margin-top: 4rem;
   }

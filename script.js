@@ -11,11 +11,15 @@ const modalRecipe = document.getElementById('modal-recipe');
 const data = {
     indigo: {
       img: 'img/Indigofera_tinctoria0 copy.png',
-      recipeKey: 'dye.indigo.recipe'
+      recipeKey: 'dye.indigo.recipe',
+      swatchImg: 'img/swatches/indigo.webp',
+      archiveSectionId: 'indigo'
     },
     madder: {
-      img: 'indigo-drawing.svg',
-      recipeKey: 'dye.madder.recipe'
+      img: 'img/madder-drawing.png',
+      recipeKey: 'dye.madder.recipe',
+      swatchImg: 'img/swatches/madder.webp',
+      archiveSectionId: 'madder'
     }
   };
 
@@ -33,8 +37,8 @@ function openModal(swatch) {
   const lang = localStorage.getItem("lang") || "en";
   const recipeText = translations[lang]?.[swatchData.recipeKey] || 'Recipe not available';
 
-  // Handle missing image
-  if (swatchData.img) {
+   // Set drawing image if it exists
+   if (swatchData.img) {
     modalImg.src = swatchData.img;
     modalImg.style.display = 'block';
   } else {
@@ -42,25 +46,38 @@ function openModal(swatch) {
     modalImg.style.display = 'none';
   }
 
-  // Recipe (translated)
-  modalRecipe.innerHTML = recipeText.replace(/\n/g, '<br>');
+  // Modal recipe content with swatch link
+  modalRecipe.innerHTML = `
+    <div class="recipe-text">
+      ${recipeText.replace(/\n/g, '<br>')}
+    </div>
+    <div class="modal-swatch-link">
+      <a href="archive.html#${swatchData.archiveSectionId}" title="See workshop for ${swatch}" target="_blank">
+        <img 
+          src="${swatchData.swatchImg}" 
+          alt="${swatch} swatch" 
+          class="modal-swatch-thumbnail"
+        />
+      </a>
+      <p class="modal-swatch-caption">Explore the ${swatch} workshop →</p>
+    </div>
+  `;
 
-
-  // modals with animation
+  // Show modals with animation
   drawingModal.style.display = 'flex';
   recipeModal.style.display = 'flex';
   drawingModal.classList.remove('show');
   recipeModal.classList.remove('show');
 
-  // Animate in: first drawing, then recipe
   setTimeout(() => {
     drawingModal.classList.add('show');
-  }, 50); // slight delay for CSS to trigger
+  }, 50);
 
   setTimeout(() => {
     recipeModal.classList.add('show');
-  }, 400); // appear after drawing
+  }, 400);
 }
+
 
 function closeModal() {
     drawingModal.classList.remove('show');
