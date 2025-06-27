@@ -134,7 +134,32 @@ function closeModal() {
 `,
 
 
-    "dye.madder.recipe": `Soak leaves in water for 24h. Add lime and reduce for color release.`,
+    "dye.madder.recipe": `
+<p><strong>Madder Root</strong> is one of the most ancient and cherished natural dyes, derived from the roots of <em>Rubia tinctorum</em>. It produces a rich spectrum of reds, from soft peach to deep brick—depending on preparation and water chemistry. This recipe honors traditional methods using gentle heat and natural mordants.</p>
+
+<p><strong>Materials Needed:</strong></p>
+<ul>
+  <li>50g dried madder root (chopped or powdered)</li>
+  <li>15g alum (potassium aluminum sulfate)</li>
+  <li>5g cream of tartar (optional, brightens reds)</li>
+  <li>Natural fiber cloth (wool, silk, or cotton; pre-washed)</li>
+  <li>Non-reactive dye pot (stainless steel or enamel)</li>
+  <li>Strainer or cloth bag (if using chopped root)</li>
+  <li>Warm water (~50–60°C)</li>
+  <li>Long spoon or stick</li>
+</ul>
+
+<p><strong>Step-by-Step Process:</strong></p>
+  <li>Soak the fabric in warm water, then mordant it by simmering for 1 hour in a bath with alum and optional cream of tartar. Let cool in the bath, then rinse and keep damp.</li>
+  <li>Place madder root in warm water and soak for several hours or overnight to extract color.</li>
+  <li>Heat the madder dye bath gently to ~50–60°C. Do not boil, as high temperatures can dull the red to brown.</li>
+  <li>Strain the root if desired, then add the damp, mordanted fabric.</li>
+  <li>Maintain low heat and stir gently for 1–2 hours. For deeper hues, let the fabric sit in the cooling dye bath overnight.</li>
+  <li>Remove the fabric, rinse thoroughly, and hang to dry in the shade.</li>
+
+<p>Madder dyeing is a meditative process that rewards patience and care. Subtle changes in temperature, pH, and time can yield a fascinating variety of reds, connecting us to a long legacy of natural color creation.</p>
+`,
+
   
   "footer.archive": "Visit the Workshop Archive →",
     "footer.gallery": "Gallery →"

@@ -30,21 +30,18 @@
     font-size: 16px‚;
   }
 
-  h5 {
-    color: var(--cream);
-    font-size: 18px;
-
-  }
 
   .color-header {
     background-color: var(--pinky); /* your color */
     padding: 1rem 1.5rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center;         /* vertically center items in row */
+    justify-content: center;     /* horizontally center all content */
+    gap: 1rem;    
     box-sizing: border-box;
     position: relative;
     height: 80px;
+    text-align: center;
   }
   
   .color-header h1 {
@@ -66,13 +63,18 @@
     flex: 1; /* pushes the footer down */
   }
 
-  .subtitle {
-    text-align: center;
+
+  h5 {
+    color: var(--cream);
+    font-size: 18px;
+
+  }
+
+  .subtitle  {
     font-family: inherit; /* Uses the same font as rest of page */
     font-size: 15px;
-    margin-top: 1rem;
-    margin-bottom: rem;
-    color: var(--text);
+    margin: 0;
+    color: var(--moss);
   }
   
   .subtitle a {
@@ -84,6 +86,30 @@
   .subtitle a:hover {
     color: var(--moss);
     text-decoration: underline solid;
+  }
+
+  .language-switcher {
+    position: absolute;
+    left: 1.5rem; /* align to left edge of header */
+    display: flex;
+    gap: 5px;
+  }
+
+   .language-switcher button {
+    background-color: var(--pinky); /* same as header */
+    color: var(--moss);
+    border: 1px;
+    font-size: 12px;
+  
+    margin: 0 5px;
+    border-radius: 20%; /* makes buttons round */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  .language-switcher button:hover {
+    background-color:  var(--cream); /* slightly darker on hover */
   }
   
   .swatch-grid {
@@ -169,7 +195,7 @@
     max-width: 600px;
     margin: auto;
     border-radius: 10px;
-    padding: 2rem;
+  
   }
   
   #recipe-modal {
@@ -182,6 +208,7 @@
     margin-bottom: 50px;
     position: fixed; /* Make sure it stays in place */
     z-index: 1001;    /* Adjust if needed */
+    background: var(--cream-transparent);
   }
   
   /* Recipe Modal Specific Styles */
@@ -306,22 +333,7 @@
     padding: 3rem 1.5rem;
   }
 
-  .language-switcher button {
-    background-color: var(--pinky); /* same as header */
-    color: var(--moss);
-    border: 1px;
-    font-size: 12px;
-  
-    margin: 0 5px;
-    border-radius: 20%; /* makes buttons round */
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-
-  .language-switcher button:hover {
-    background-color:  var(--cream); /* slightly darker on hover */
-  }
+ 
 
  /* ===== WORKSHOP SECTION ===== */
 .workshop-section {
