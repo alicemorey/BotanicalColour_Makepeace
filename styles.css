@@ -90,7 +90,7 @@
 
   .language-switcher {
     position: absolute;
-    left: 1.5rem; /* align to left edge of header */
+    left: 1.2rem; /* align to left edge of header */
     display: flex;
     gap: 5px;
   }
@@ -409,32 +409,22 @@
 
   h5 {
     font-size: 1rem;
-  }
-
-  .color-header {
-    flex-direction: column;
-    height: auto;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .color-header h1 {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-  }
-
-  .language-switcher {
-    position: static;
-    justify-content: center;
-    margin: 0.5rem auto;
+    margin-top: 0; /* remove space if any */
   }
 
   .color-header {
     flex-direction: column;
     gap: 0.25rem;
-    height: auto;
+    height: 215px;
     padding-top: 0.5rem;
   } 
+
+  .language-switcher {
+    position: static;
+    justify-content: center;
+    margin: 0 auto 0.1rem; /* nearly no space below */
+    
+  }
 
   .logo {
     position: static;
@@ -484,7 +474,7 @@
 
   .color-header {
     flex-direction: column;
-    height: auto;
+    height: 80px;
     padding: 0.5rem;
     text-align: center;
   }
