@@ -16,10 +16,16 @@ const data = {
       archiveSectionId: 'indigo'
     },
     madder: {
-      img: 'img/madder-drawing.png',
+      img: 'img/madder.png',
       recipeKey: 'dye.madder.recipe',
       swatchImg: 'img/swatches/madder.webp',
       archiveSectionId: 'madder'
+    },
+    nettle: {
+      img: 'img/nettle.png',
+      recipeKey: 'dye.nettle.recipe',
+      swatchImg: 'img/swatches/nettletest.webp',
+      archiveSectionId: 'nettle'
     }
   };
 
